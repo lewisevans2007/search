@@ -2,7 +2,17 @@
 
 A simple grep like tool for searching text in files
 
-## 📦 Usage
+## Example
+
+![Demo 1](demo/demo_1.png)
+
+![Demo 2](demo/demo_2.png)
+
+![Demo 3](demo/demo_3.png)
+
+![Demo 4](demo/demo_4.png)
+
+## Usage
 
 ```bash
 search <pattern> <path> [args]

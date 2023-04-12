@@ -3,10 +3,10 @@
  * Github: https://www.github.com/awesomelewis2007/search
 */
 
+use colored::*;
 use std::env;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
-use colored::*;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -27,27 +27,21 @@ fn main() {
     for arg in args.iter().skip(3) {
         if arg == "-nc" || arg == "--no-color" {
             colored::control::set_override(false);
-        }
-        else if arg == "-c" || arg == "--case-sensitive" {
+        } else if arg == "-c" || arg == "--case-sensitive" {
             case_sensitive = true;
-        }
-        else if arg == "-l" || arg == "--line-number" {
+        } else if arg == "-l" || arg == "--line-number" {
             line_number = true;
-        }
-        else if arg == "-s" || arg == "--summary" {
+        } else if arg == "-s" || arg == "--summary" {
             show_summary = true;
-        }
-        else if arg == "-S" || arg == "--silent" {
+        } else if arg == "-S" || arg == "--silent" {
             silent = true;
-        }
-        else if arg == "-h" || arg == "--help" {
+        } else if arg == "-h" || arg == "--help" {
             println!("Usage: search <filename> <pattern> [args]");
             println!("\t-c, --case-sensitive\t\tCase sensitive search");
             println!("\t-l, --line-number\t\tShow line number");
             println!("\t-s, --summary\t\t\tShow summary");
             println!("\t-h, --help\t\t\tShow this help message");
             println!("\t-nc, --no-color\t\t\tDisable colored output");
-            
             return;
         }
     }
@@ -66,7 +60,11 @@ fn main() {
         if case_sensitive {
             if line.contains(pattern) {
                 if line_number {
-                    println!("{}\t| {}", (index + 1).to_string().cyan(), line.replace(pattern, &pattern.green().to_string()));
+                    println!(
+                        "{}\t| {}",
+                        (index + 1).to_string().cyan(),
+                        line.replace(pattern, &pattern.green().to_string())
+                    );
                     total_matches += 1;
                 } else {
                     println!("{}", line.replace(pattern, &pattern.green().to_string()));
@@ -76,7 +74,11 @@ fn main() {
         } else {
             if line.to_lowercase().contains(&pattern.to_lowercase()) {
                 if line_number {
-                    println!("{}\t| {}", (index + 1).to_string().cyan(), line.replace(pattern, &pattern.green().to_string()));
+                    println!(
+                        "{}\t| {}",
+                        (index + 1).to_string().cyan(),
+                        line.replace(pattern, &pattern.green().to_string())
+                    );
                     total_matches += 1;
                 } else {
                     println!("{}", line.replace(pattern, &pattern.green().to_string()));
@@ -92,7 +94,11 @@ fn main() {
     }
     if show_summary {
         if total_matches != 0 {
-            println!("{} {} matches found", "Summary:".cyan(), total_matches.to_string().green());
+            println!(
+                "{} {} matches found",
+                "Summary:".cyan(),
+                total_matches.to_string().green()
+            );
         }
     }
 }

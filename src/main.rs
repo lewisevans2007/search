@@ -55,6 +55,16 @@ fn main() {
     };
     let reader = BufReader::new(file);
     let mut total_matches = 0;
+    if !silent {
+        println!(
+            "{} {} {} {} {}",
+            "Searching for".cyan(),
+            pattern.green(),
+            "in".cyan(),
+            filename.green(),
+            "...".cyan()
+        );
+    }
     for (index, line) in reader.lines().enumerate() {
         let line = line.unwrap();
         if case_sensitive {

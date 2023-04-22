@@ -1,6 +1,8 @@
 /* Search
  * A simple grep like tool for searching text in files
  * Github: https://www.github.com/awesomelewis2007/search
+ * License: GPL-3.0
+ * By: Lewis Evans
 */
 
 use colored::*;

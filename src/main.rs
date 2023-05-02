@@ -39,6 +39,8 @@ fn main() {
             silent = true;
         } else if arg == "-h" || arg == "--help" {
             println!("Usage: search <filename> <pattern> [args]");
+            println!("A simple grep like tool for searching text in files");
+            println!("\nArguments:");
             println!("\t-c, --case-sensitive\t\tCase sensitive search");
             println!("\t-l, --line-number\t\tShow line number");
             println!("\t-s, --summary\t\t\tShow summary");

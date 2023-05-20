@@ -83,4 +83,4 @@ search <pattern> <path> --no-color
 ```
 
 ## 📝 License
-This project is licensed under the GPL License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the GPL License - see the [LICENCE](LICENCE) file for details

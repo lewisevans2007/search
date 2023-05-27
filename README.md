@@ -22,7 +22,7 @@ search <pattern> <path> [args]
 
 There are a few options you can use to customize the search
 
-###  Case sensitive search
+### Case sensitive search
 
 ```bash
 search <pattern> <path> -c
@@ -34,7 +34,7 @@ Or
 search <pattern> <path> --case-sensitive
 ```
 
-###  Show line number
+### Show line number
 
 ```bash
 search <pattern> <path> -l
@@ -46,7 +46,7 @@ Or
 search <pattern> <path> --line-number
 ```
 
-###  Show summary
+### Show summary
 
 ```bash
 search <pattern> <path> -s
@@ -58,7 +58,7 @@ Or
 search <pattern> <path> --summary
 ```
 
-###  Show help message
+### Show help message
 
 ```bash
 search <pattern> <path> -h
@@ -70,7 +70,7 @@ Or
 search <pattern> <path> --help
 ```
 
-###  Disable colored output
+### Disable colored output
 
 ```bash
 search <pattern> <path> -nc
@@ -82,5 +82,5 @@ Or
 search <pattern> <path> --no-color
 ```
 
-## 📝 License
-This project is licensed under the GPL License - see the [LICENCE](LICENCE) file for details
+## Licence
+This project is licensed under the GNU General Public License v3.0 - see the [LICENCE](LICENCE) file for details

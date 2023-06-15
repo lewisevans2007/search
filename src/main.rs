@@ -13,11 +13,13 @@ use std::io::{BufRead, BufReader};
 fn main() {
     let args: Vec<String> = env::args().collect();
 
+    // Check for correct arguments
     if args.len() < 3 {
         println!("Usage: search <filename> <pattern> [args]");
         return;
     }
 
+    // Parse arguments
     let filename = &args[1];
     let pattern = &args[2];
 
@@ -50,6 +52,7 @@ fn main() {
         }
     }
 
+    // Open file
     let file = match File::open(filename) {
         Ok(file) => file,
         Err(_) => {
@@ -57,8 +60,11 @@ fn main() {
             return;
         }
     };
+
     let reader = BufReader::new(file);
     let mut total_matches = 0;
+
+    // Print a message to the screen to let the user know what's going on
     if !silent {
         println!(
             "{} {} {} {} {}",
@@ -69,8 +75,12 @@ fn main() {
             "...".cyan()
         );
     }
+
+    // Iterate over each line of the file
     for (index, line) in reader.lines().enumerate() {
         let line = line.unwrap();
+
+        // If the line contains the pattern, print it out
         if case_sensitive {
             if line.contains(pattern) {
                 if line_number {
@@ -101,11 +111,14 @@ fn main() {
             }
         }
     }
+    // If no matches are found, print a message to the user
     if total_matches == 0 {
         if !silent {
             println!("{}", "No matches found".red());
         }
     }
+
+    // If the user wants a summary, print one
     if show_summary {
         if total_matches != 0 {
             println!(

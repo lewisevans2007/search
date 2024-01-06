@@ -1,6 +1,6 @@
 /* Search
  * A simple grep like tool for searching text in files
- * Github: https://www.github.com/awesomelewis2007/search
+ * Github: https://www.github.com/lewisevans2007/search
  * Licence: GNU General Public License v3.0
  * By: Lewis Evans
 */
